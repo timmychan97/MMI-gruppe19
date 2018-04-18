@@ -1,0 +1,29 @@
+html, body {
+	margin: 0;
+	padding :0;
+}
+
+body {
+	margin:auto;
+	background-color:black;
+}
+
+#content {
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 108px; /*108px for footer*/
+}
+
+
+
+footer {
+	display:inline-block;
+	position: fixed;
+	left: 50%;
+	transform: translateX(-50%);
+	background-color:black;
+	width:720px;
+	height:100%;
+	top:1072px;
+}
