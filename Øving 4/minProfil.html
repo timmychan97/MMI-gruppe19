@@ -2,13 +2,27 @@
 <html>
 <head>
 	<link rel="stylesheet" type="text/css" href="style.css">
-	</head>
+	<script>
+		var clickCheckBox = function(){
+			localStorage.setItem("anonym", "0");
+			if (confirm('Alle kan nå se din profil')) {
+				document.cookie = "anonym=1;";
+			}
+			else {
+			    
+			}
+		}
+
+	</script>
+</head>
 <body>
 <img id="content" src="./Min profil.png" width="720px" alt="Planets" usemap="#content-map">
 
 <map name="content-map">
   <area target="" shape="rect" alt="Registrer skritt" title="Registrer skritt" href="registrerSkritt.html" coords="435,1167,609,1200" >
+  <area target="" shape="rect" alt="velgAnonym" title="velgAnonym" onclick="clickCheckBox();" coords="530,1021,560,1051" >
 </map>
+<div id="checkAnonym"></div>
 <footer>
 	<img src="./Navbar.png" style="width:100%" usemap="#navbar-map">
 	<map name="navbar-map">
