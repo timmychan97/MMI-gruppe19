@@ -1,18 +1,20 @@
+<!DOCTYPE html>
 <html>
     <body>
-        <img src="konkurranser.png" width="720px" usemap="#konkurranser-map">
-            <map name="konkurranser-map">
-                <area href="aktiv konkurranse NTNU-m.html" coords="713,603,4,519" shape="rect">
-                <area href="aktiv konkurranse Thon-M.html" coords="718,1004,0,914" shape="rect">
-            </map>
-                      
+        <img src="./aktiv konkurranse Thon-M" width="720px" alt="Planets" usemap="#map">
+        <map name="map">
+            <area href="aktiv konkurranse Thon.html" coords="190,670,524,801" shape="rect">
+            <area href="konkurranser.html" coords="0,0,96,109" shape="rect">
+        </map>
+        
         <canvas id="myCanvas"></canvas>
         <script type="text/javascript">
-        	var can = document.getElementById("myCanvas");
+            var can = document.getElementById("myCanvas");
             var ctx = can.getContext("2d");
             console.log(document.body.getElementsByTagName("img")[0]);
             can.width = document.body.getElementsByTagName("img")[0].width;
             can.height = document.body.getElementsByTagName("img")[0].height === 0 ? 536 : document.body.getElementsByTagName("img")[0].height;
+        
             var areas = document.body.getElementsByTagName("map")[0].areas;
             ctx.fillStyle = "rgb(70, 70, 70)";
             ctx.fillRect(0, 0, can.width, can.height);
@@ -34,4 +36,4 @@
         </script>
     </body>
 </html>
-    
+  
