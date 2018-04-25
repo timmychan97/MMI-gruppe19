@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html>
+<body>
+<img src="./Laginfo.png" width="360px" alt="Planets" usemap="#planetmap">
+
+<map name="planetmap">
+  <area shape="rect" coords="0,0,49,45" href="lagoversikt.html">
+  <area shape="rect" coords="160,50,50,40" href="lagoversikt.html">
+</map>
+</body>
+</html>
+
+<canvas id="myCanvas"></canvas>
+<script type="text/javascript">
+	var can = document.getElementById("myCanvas");
+	var ctx = can.getContext("2d");
+	console.log(document.body.getElementsByTagName("img")[0]);
+	can.width = document.body.getElementsByTagName("img")[0].width;
+	can.height = document.body.getElementsByTagName("img")[0].height === 0 ? 536 : document.body.getElementsByTagName("img")[0].height;
+
+	var areas = document.body.getElementsByTagName("map")[0].areas;
+	ctx.fillStyle = "rgb(70, 70, 70)";
+	ctx.fillRect(0, 0, can.width, can.height);
+	for(var i = 0; i < areas.length; i++) {
+		var coords = areas[i].coords.split(",");
+		if(areas[i].shape === "rect") {
+			ctx.fillStyle = "rgb(255, 50, 50)";
+			ctx.fillRect(
+				coords[0],
+				coords[1],
+				coords[2]-coords[0],
+				coords[3]-coords[1]);
+		} else {
+			ctx.beginPath();
+			ctx.arc(coords[0], coords[1], coords[2], 0, Math.PI*2);
+			ctx.fill();
+		}
+	}
+</script>
